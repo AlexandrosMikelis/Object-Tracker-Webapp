@@ -1,0 +1,241 @@
+//LAYOUT
+.col-offset-0 {
+  margin-left: 0%;
+}
+.no-min-height {
+  min-height: 0px !important;
+}
+.no-min-width {
+  min-width: 0px !important;
+}
+.no-padding {
+  padding: 0 !important;
+}
+.no-margin {
+  margin: 0 !important;
+}
+.full-size {
+  width: 100% !important;
+  height: 100% !important;
+}
+.full-height {
+  height: 100% !important;
+}
+.full-width {
+  width: 100% !important;
+}
+
+@mixin col-x($percent) {
+  @extend .col;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 $percent;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 $percent;
+  -ms-flex: 0 0 $percent;
+  flex: 0 0 $percent;
+  max-width: $percent;
+}
+
+.center-items {
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(center);
+}
+.center-items-wrap-start {
+  @include display-flex;
+  @include align-items(flex-start);
+  @include flex-wrap(wrap);
+  @include justify-content(flex-start);
+}
+.center-items-wrap-space-between {
+  @include display-flex;
+  @include align-items(flex-start);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+}
+.center-items-wrap {
+  @include display-flex;
+  @include align-items(center);
+  @include flex-wrap(wrap);
+  @include justify-content(center);
+}
+.center-items-space-around {
+  @include display-flex;
+  @include align-items(center);
+  @include justify-content(space-around);
+}
+.center-items-space-between {
+  @include display-flex;
+  @include align-items(center);
+  @include justify-content(space-between);
+}
+
+//space-evenly
+.center-items-space-evenly {
+  @include display-flex;
+  @include align-items(center);
+  @include justify-content(space-evenly);
+}
+.center-items-space-between-end {
+  @include display-flex;
+  @include align-items(flex-end);
+  @include justify-content(space-between);
+}
+
+.center-items-top {
+  @include display-flex;
+  @include align-items(top);
+  @include justify-content(center);
+}
+.center-items-top-start {
+  @include display-flex;
+  @include align-items(top);
+  @include justify-content(flex-start);
+}
+.center-items-bottom-start {
+  @include display-flex;
+  @include align-items(flex-end);
+  @include justify-content(flex-start);
+}
+.center-items-bottom-end {
+  @include display-flex;
+  @include align-items(flex-end);
+  @include justify-content(flex-end);
+}
+.center-items-top-space-between {
+  @include display-flex;
+  @include align-items(top);
+  @include justify-content(space-between);
+}
+.center-items-start-space-between {
+  @include display-flex;
+  @include align-items(flex-start);
+  @include justify-content(space-between);
+}
+.center-items-bottom {
+  @include display-flex;
+  @include align-items(flex-end);
+  @include justify-content(center);
+}
+
+.vcenter-items {
+  @include display-flex;
+  @include align-items(center);
+  @include justify-content(flex-start);
+}
+.center-items-end {
+  @include display-flex;
+  @include align-items(center);
+  @include justify-content(flex-end);
+}
+
+.center-items-start-center {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(flex-start);
+  @include justify-content(center);
+}
+
+.center-items-start-top {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(flex-start);
+  @include justify-content(top);
+}
+.center-items-start-bottom {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(flex-start);
+  @include justify-content(flex-end);
+}
+.center-items-start-bottom-h {
+  @include display-flex;
+  @include flex-direction(row);
+  @include align-items(flex-end);
+  @include justify-content(flex-start);
+}
+.center-items-top-vertical {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(top);
+}
+.center-items-top-vertical-start {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(top);
+}
+
+.center-vertical {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+.center-vertical-top {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(top);
+}
+
+.center-vertical-start {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(flex-start);
+  @include justify-content(center);
+}
+
+.center-vertical-start-top {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(flex-start);
+  @include justify-content(top);
+}
+.center-vertical-space-around {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(space-around);
+}
+.center-vertical-space-between {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(space-between);
+}
+.center-vertical-start-space-between {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(flex-start);
+  @include justify-content(space-between);
+}
+
+.center-vertical-right {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(flex-end);
+  @include justify-content(center);
+}
+
+.center-vertical-start-space-between-right {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(flex-end);
+  @include justify-content(space-between);
+}
+.center-vertical-bottom {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(flex-end);
+}
+
+.center-vertical-top-stretch {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(stretch);
+  @include justify-content(top);
+}

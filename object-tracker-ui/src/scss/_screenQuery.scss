@@ -1,0 +1,96 @@
+@use "sass:map";
+@use 'sass:math';
+$initSize: 16;
+
+// INFO if change this do not forget to change in settings the SCREEN_QUERY
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$break-small: 375px;
+$break-large: 768px;
+
+
+
+@function calculateRem($size, $multiplier: 1) {
+  // @return   (($size*$multiplier)/$initFontSize)+rem;
+  @return #{math.div($size * $multiplier, $initSize) or calc(($size * $multiplier) / $initSize)}rem;
+}
+@mixin defaultScreenW($unit) {
+  width: ($defaultScreenW/$initFontSize) + $unit;
+}
+@mixin defaultScreenH($unit) {
+  height: ($defaultScreenH/$initFontSize) + $unit;
+}
+
+@mixin respond-to($media) {
+  @if $media == iphone4 {
+    @media only screen and (min-device-width: 320px) and (device-height: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $media == iphone5 {
+    @media only screen and (min-device-width: 320px) and (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $media == iphone6 {
+    @media only screen and (min-device-width: 375px) and (device-height: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $media == iphone6Plus {
+    @media only screen and (min-device-width: 414px) and (device-height: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $media == ldpi {
+    @media only screen and (-webkit-min-device-pixel-ratio: 0.75) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $media == mdpi {
+    @media only screen and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $media == hdpi {
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $media == xhdpi {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $media == xxhdpi {
+    @media only screen and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $media == xxxhdpi {
+    @media only screen and (-webkit-min-device-pixel-ratio: 4) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $media == handhelds {
+    @media only screen and (max-width: $break-small) {
+      @content;
+    }
+  } @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large) {
+      @content;
+    }
+  } @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) {
+      @content;
+    }
+  }
+}
+
+@mixin screenLowerThen($breakpoint) {
+  @if map-has-key($map: $grid-breakpoints, $key: $breakpoint) {
+    @media (max-width: map-get( $grid-breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, `#{$breakpoint}` can not be found."
+    + "Available breakpoints are `#{map-keys($grid-breakpoints)}`";
+  }
+}

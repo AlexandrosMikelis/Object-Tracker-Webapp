@@ -1,0 +1,11 @@
+@mixin card-iraq{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 8px 8px #00000014;
+  border-radius: 10px;
+}
+
+.card {
+  padding: calculateRem(20);
+  border-radius: calculateRem(10);
+  box-shadow: 0px 8px 8px #00000014;
+}

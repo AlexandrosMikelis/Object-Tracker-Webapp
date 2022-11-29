@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  // padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.3;
+  font-family: $_fontfamily;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+a,
+button {
+  background: none;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-text-decoration-skip: objects;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+a:active,
+a:hover,
+button:active,
+button:hover {
+  outline-width: 0;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline dotted;
+}
+
+img {
+  display: block;
+  margin: 0;
+  border: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+template,
+[hidden] {
+  display: none;
+}
+
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  border: 0;
+  font-size: 100%;
+  vertical-align: middle;
+  background: transparent;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace;
+  font-size: 1em;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+select#lang {
+  background-color:#999999;
+  border-radius: 20px;
+  width: auto;
+  color: white;
+  padding: 3px 20px;
+  option{
+    background-color: white;
+    color: black;
+  }
+}
+select#lang:focus{
+  background-color: $cyan;
+}
+
+.pgm-html-info-content-box {
+	padding: 0px !important;
+  box-sizing: border-box !important;
+  border: 2px solid rgb(21, 21, 21);
+  .pos-select-info-window {
+    width: 190px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font: normal normal bold 14px/16px Play;
+    letter-spacing: 0px;
+    position: relative;
+    .close-info-window {
+      display: block;
+      //background: url("~assets/images/ionic-ios-close.png");
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      top: 10px;
+      right: 10px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .pos-image-wrapper {
+      display: inline-block;
+      .pos-image {
+        width: 62px;
+        height: 36px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+    .pos-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .pos-name {
+        color: #151515;
+        font: normal normal bold 16px/18px Play;
+      }
+      .pos-primary {
+        color: #0e99d7;
+      }
+      .pos-competition {
+        color: #ea8630;
+      }
+      .select-btn {
+        width: 150px;
+        height: 28px;
+        background: transparent linear-gradient(180deg, #EFBF48 0%, #C49A2D 100%) 0% 0% no-repeat padding-box;
+        box-shadow: 0px 2px 3px #00000029;
+        border-radius: 20px;
+        font: normal normal bold 16px/19px Play;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        text-shadow: 0px 2px 3px #00000029;
+      }
+    }
+  }
+}
+
+.pgm-html-info-tail-frame {
+  .pgm-html-info-tail-left {
+    border-color: rgb(33 33 33) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) !important;
+  }
+  .pgm-html-info-tail-right {
+    border-top: 14px solid rgb(32 32 32) !important;
+  }
+  .pgm-html-info-tail-erase-border {
+    background-color: rgb(33 33 33) !important;
+  }
+}

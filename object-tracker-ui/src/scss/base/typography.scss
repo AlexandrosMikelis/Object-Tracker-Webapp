@@ -1,0 +1,104 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $_fontfamily;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: $_fontfamily;
+}
+
+h1,
+.h1 {
+  // Page title: Play & Win
+  font-family: $_fontfamily;
+  font-size: 50px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #ffffff;
+  word-break: break-word;
+  @include screenLowerThen("lg") {
+    font-size: 30px;
+  }
+}
+
+h2,
+.h2 {
+  // Page subtitle: Join Puzzle Raffles, enter Lucky Raffles and earn Badges!
+  font-family: $_fontfamily;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #ffffff;
+  word-break: break-word;
+  @include screenLowerThen("lg") {
+    font-size: 14px;
+  }
+}
+
+h3,
+.h3 {
+  // Card title: Win the brand new Samsung Galaxy S21
+  font-family: $_fontfamily;
+  font-size: 40px;
+  letter-spacing: 1px;
+  color: #000000;
+  word-break: break-word;
+  text-align: center;
+  @include screenLowerThen("lg") {
+    font-size: 25px;
+  }
+}
+
+h4,
+.h4 {
+  font-weight: 400;
+  font-size: 1em;
+}
+
+h5,
+.h5 {
+  font-weight: 500;
+  font-size: calculateRem(18);
+  color: black;
+}
+
+h6,
+.h6 {
+  font-weight: 500;
+  font-size: 0.67em;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+p {
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  word-break: break-word;
+  @include screenLowerThen("lg") {
+    font-size: 16px;
+  }
+}
+
+code {
+  font-size: 40px;
+  color: white;
+  &.cyan {
+    color: $cyan;
+  }
+  &.green {
+    color: $defaultDarkGreen;
+  }
+}

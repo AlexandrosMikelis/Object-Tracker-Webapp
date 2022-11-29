@@ -1,0 +1,106 @@
+.custom-field-container {
+  @extend .center-vertical-start-space-between;
+  width: 100%;
+  max-width: 357px;
+  padding: 10px;
+  position: relative;
+
+  &.vertical {
+    max-width: 593px;
+  }
+
+  .custom-label {
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 21px;
+    margin-left: 38px;
+
+    &.invalid {
+      color: #e60000;
+    }
+
+    @include screenLowerThen("lg") {
+      font-size: 14px;
+    }
+  }
+
+  .custom-field {
+    @extend .center-items-space-between;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 4px 7px #2c273826;
+    border-radius: 20px;
+    padding-left: 38px;
+    padding-right: 10px;
+    position: relative;
+    pointer-events: visibleStroke;
+    max-width: 356px;
+    width: 100%;
+    cursor: pointer;
+    height: 100%;
+    min-height: 55px;
+
+    &.open {
+      border-radius: 20px 20px 0 0;
+    }
+
+    &.remove-padding {
+      padding: 0;
+    }
+
+    input {
+      border: none;
+      caret-color: black;
+      color: black;
+    }
+    input::placeholder {
+      color: #999999;
+    }
+    input:focus {
+      caret-color: black;
+      color: black;
+    }
+    input[type="text"] {
+      height: 55px;
+      width: 100%;
+      caret-color: black;
+      background: transparent;
+    }
+
+    input:disabled{
+      color: #999999;
+    }
+
+    .icon-left {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .icon-right {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      height: 11px;
+      width: 18px;
+    }
+
+    &.invalid {
+      background: #f6f6f6 0% 0% no-repeat padding-box;
+      color: #999999;
+    }
+
+    &.vertical {
+      max-width: 556px;
+    }
+
+    .click-section {
+      width: 100%;
+      cursor: pointer;
+      height: 100%;
+      padding: 21px 38px;
+    }
+  }
+}

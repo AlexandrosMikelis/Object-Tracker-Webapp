@@ -1,0 +1,123 @@
+//popOver general
+//.popover-wrapper {
+//  .popover-arrow {
+//    width: calculateRem(20);
+//    height: calculateRem(10);
+//  }
+//  .popover-content {
+//    width: 70%;
+//    border-radius: calculateRem(10);
+//    background-color: $main-color;
+//    .list {
+//      padding: 0 calculateRem(10);
+//      margin: calculateRem(-2) 0;
+//
+//      .label {
+//        max-width: 100%;
+//        padding-left: calculateRem(4);
+//      }
+//    }
+//  }
+//}
+
+
+.custom-pop-over {
+  ion-backdrop {
+    opacity: 0.7 !important;
+    background-color: #A8A8A8;
+    border-radius: 0;
+
+  }
+
+  .popover-arrow {
+    width: calculateRem(20);
+    height: calculateRem(10);
+  }
+
+  .popover-content {
+    border-radius: calculateRem(10);
+    border: none;
+    --width: auto;
+    --height: auto;
+    // box-shadow: 0 calculateRem(3) calculateRem(12) calculateRem(2) rgba(0, 0, 0, 0.8);
+    background-color: white;
+
+    .popover-viewport {
+      opacity: 1;
+    }
+  }
+
+}
+
+
+//.popover-content {
+//  width: 90%!important;
+//  min-width: calculateRem(300);
+//  max-width: calculateRem(400);
+//  background-color: $main-color;
+//  border:none;
+//  border-radius:0;
+//  //box-shadow: 0 calculateRem(3) calculateRem(12) calculateRem(2) rgba(0, 0, 0, 0.3);
+//  // animation not working for windows in safari
+//  //@include animation(fadeInUp 300ms ease-in-out);
+//
+//  .content {
+//    background-color: $main-color;
+//  }
+//
+//}
+
+.profile-pop-up-custom-class, .review-stock-pop-up-custom-class, .create-pos-pop-up {
+  ion-backdrop {
+    opacity: 0.7 !important;
+
+    //  background-color: #A8A8A8;
+    //  border-radius: none;
+  }
+
+  .popover-arrow {
+    width: calculateRem(20);
+    height: calculateRem(10);
+  }
+
+  .popover-content {
+
+    background-color: white;
+    border-radius: 20px !important;
+    --min-width: #{calculateRem(818)};
+
+    .popover-viewport {
+      opacity: 1;
+    }
+  }
+
+
+}
+
+.basic-pop-up-custom-class {
+  ion-backdrop {
+    opacity: 0.7 !important;
+
+    //  background-color: #A8A8A8;
+    //  border-radius: none;
+  }
+
+  //.popover-arrow {
+  //  width: calculateRem(20);
+  //  height: calculateRem(10);
+  //}
+
+  .popover-content {
+    //background-color: white;
+    background: white;
+    border-radius: 10px !important;
+    width: fit-content;
+    //--min-width: #{calculateRem(818)};
+
+    .popover-viewport {
+      opacity: 1;
+    }
+  }
+
+
+}

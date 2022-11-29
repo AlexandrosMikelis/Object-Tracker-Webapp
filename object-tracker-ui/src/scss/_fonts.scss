@@ -1,0 +1,72 @@
+//@font-face {
+//font-family: Vodafone;
+//src: url(~assets/fonts/VodafoneRg.ttf) format("trueType");
+//}
+
+$_fontfamily: Poppins, Poppins-Bold;
+
+@font-face {
+  font-family: Poppins;
+  src: url("~src/assets/fonts/Poppins-Regular.ttf") format("trueType");
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url("~src/assets/fonts/Poppins-Bold.ttf") format("trueType");
+}
+
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url("~src/assets/fonts/Poppins-SemiBold.ttf") format("trueType");
+}
+
+@font-face {
+  font-family: Poppins-Italic;
+  src: url("~src/assets/fonts/Poppins-Italic.ttf") format("trueType");
+}
+
+@mixin font-size(
+  $size,
+  $color: $text-color-black,
+  $weight: normal,
+  $fontFamily: $_fontfamily
+) {
+  font-size: calculateRem($size);
+  font-weight: $weight;
+  color: $color;
+  font-family: $fontFamily;
+  word-break: break-word;
+}
+
+@mixin font-set($size, $color: $text-color-black, $weight: normal) {
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+  font-family: Play, "play-regular", "Noto Sans", Arial, Helvetica, sans-serif;
+}
+
+@mixin font-family($fontFamily: $_fontfamily) {
+  font-family: $fontFamily;
+}
+
+p {
+  color: $text-color-black;
+  //margin: 0px !important;
+}
+
+.rtl-direction {
+  direction: rtl !important;
+}
+
+.text-break {
+  word-break: keep-all !important;
+  word-wrap: break-word !important;
+  text-overflow: clip !important;
+  white-space: pre-wrap !important;
+}
+
+.ellipsis-text {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}

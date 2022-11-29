@@ -1,0 +1,221 @@
+//button.action{
+//  width: 100%;
+//  height: 100%;
+//  min-width: 232px;
+//  min-height: 40px;
+//  background: $button 0% 0% no-repeat padding-box;
+//  border: 1px solid $button;
+//  border-radius: 20px;
+//  opacity: 1;
+//  padding: 9px 60px;
+//  font-size: 18px;
+//  color: white;
+//  cursor: pointer;
+//  text-align: center;
+//  font-weight: bold;
+//  @include screenLowerThen('lg') {
+//    font-size: 14px;
+//    max-width: 168px;
+//    max-height: 33px;
+//    padding: 4px 40px;
+//
+//  }
+//  &.inactive{
+//    opacity: 0.5;
+//  }
+//  &.arrow{
+//    @extend .center-items-space-between;
+//    min-width: 168px;
+//    min-width: 261px;
+//    padding: 4px 30px;
+//
+//    .image-arrow {
+//      width: calculateRem(20);
+//      height: calculateRem(13);
+//      margin-left: calculateRem(20);
+//    }
+//
+//
+//  }
+//
+//}
+//
+//button.proceed{
+//  background: $button 0% 0% no-repeat padding-box;
+//  border: 1px solid $button;
+//  border-radius: 30px;
+//  opacity: 1;
+//  // padding: 9px 66px;
+//  color: white;
+//  font-size: 18px;
+//  min-width: 230px;
+//  min-height: 40px;
+//  background-position: center;
+//  transition: background 0.8s;
+//  @include screenLowerThen('lg') {
+//    // min-width: 137px;
+//    font-size: 14px;
+//    min-width: 168px;
+//    min-height: 33px;
+//  }
+//
+//
+//  &.outline{
+//    background-color: transparent;
+//    border: 1px solid $button;
+//    color: $button;
+//
+//  }
+//  &.arrow{
+//    @extend .center-items-space-between;
+//    min-width: 200px;
+//    padding: 0px 17px;
+//    height: auto;
+//    .image-arrow {
+//      width: calculateRem(20);
+//      height: calculateRem(13);
+//      margin-left: calculateRem(20);
+//    }
+//  }
+//  &.bold{
+//    font-weight: bold;
+//  }
+//
+//}
+//button[disabled]{
+//  opacity: 0.5;
+//  cursor: not-allowed;
+//}
+//
+button {
+  &.btn {
+    &.btn-trt {
+      height: 100%;
+      padding: 4px 10px 4px 5px !important;
+      height: unset;
+      border-radius: 20px !important;
+      background: transparent linear-gradient(180deg, #EFBF48 0%, #C49A2D 100%) 0% 0% no-repeat padding-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0px;
+      &.btn-gold {
+        color: #FFFFFF;
+        text-shadow: 0px 2px 3px #00000029;
+        box-shadow: 0px 2px 3px #00000029;
+        --background: #{transparent linear-gradient(180deg, #EFBF48 0%, #C49A2D 100%) 0% 0% no-repeat padding-box};
+      }
+      &.btn-transparent {
+        background: transparent;
+        color: #06162E;
+      }
+      &.color-gold {
+        color: #D9AD40;
+      }
+    }
+    .btn-image {
+      margin: 0 5px;
+      width: 15px;
+      height: 15px;
+    }
+    .btn-text {
+      margin: 0 5px;
+    }
+  }
+}
+
+.card {
+  &.trt-card {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 8px 8px #00000008;
+    border-radius: 10px;
+    border: 0;
+    .card-header {
+      background-color: inherit;
+      border: 0;
+      padding: 20px 30px;
+      border-radius: 10px;
+    }
+  }
+}
+
+ion-button {
+  --background: #00d1d2;
+  --color: white;
+  //min-width: calculateRem(180);
+  --border-radius	: 25px;
+  font-weight: bold;
+  --background-hover: #{$main-blue};
+  font-size: calculateRem(16);
+
+  @include screenLowerThen('lg'){
+    min-width: auto;
+  }
+
+  &.gold{
+    --border-width: 0px;
+    box-shadow: 0px 2px 3px #00000029;
+    border-radius: 20px;
+    --background: #{transparent linear-gradient(180deg, #EFBF48 0%, #C49A2D 100%) 0% 0% no-repeat padding-box};
+  }
+
+  span {
+    &.iraq-text {
+      text-transform: none !important;
+    }
+  }
+
+  &.i-small {
+    font: normal normal bold 16px/19px Play;
+    letter-spacing: 0px;
+  }
+
+  &.my-small{
+    max-width: calculateRem(80);
+    min-width: calculateRem(50);
+    height: calculateRem(28);
+    font-size: calculateRem(12);
+    letter-spacing: 1px;
+    width: calculateRem(122);
+  }
+  &.small-with-icon{
+    height: calculateRem(28);
+    font-size: calculateRem(12);
+    letter-spacing: 1px;
+    width: calculateRem(122);
+  }
+
+  span{
+    padding-right:  calculateRem(8.5);
+  }
+
+  &.outline {
+    --background: #ffffff 0% 0% no-repeat padding-box;
+    --border-color:#00d1d2;
+    --color: #00d1d2;
+    --border-style:solid;
+    --border-width:2px;
+    --color-hover: white;
+  }
+  .image-right{
+    height: calculateRem(18);
+    width: calculateRem(16);
+    margin: 0 calculateRem(10);
+
+  }
+  .image-left{
+    height: calculateRem(18);
+    width: calculateRem(16);
+    margin:0 calculateRem(10);
+  }
+
+
+}
+ion-button.inactive {
+  --opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:disabled{
+  cursor: not-allowed;
+}

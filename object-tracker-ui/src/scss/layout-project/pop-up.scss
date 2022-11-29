@@ -1,0 +1,15 @@
+.global-info-pop-up {
+  mat-dialog-container {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 32px 64px #2c273826;
+    border-radius: 40px !important;
+    padding: 0;
+  }
+}
+
+.backdropBackground {
+  background: transparent linear-gradient(120deg, #82b63a 0%, #00b0ca 100%) 0%
+    0% no-repeat padding-box !important;
+  opacity: 0.7 !important;
+  filter: blur(20px) !important;
+}
