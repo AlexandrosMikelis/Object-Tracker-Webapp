@@ -59,47 +59,12 @@
   align-items: left;
 }
 
-.srate-input {
-  background-color: #fafbff;
+.tackobot-input {
   border-top: none;
   border-left: none;
   border-right: none;
   border-bottom: none;
   margin-top: 5px;
-}
-
-.input-label {
-  width: 30px;
-  height: 16px;
-}
-
-.input-holder{
-  position: relative;
-  line-height: 14px;
-  width: 100%;
-  margin-top: 50px;
-  display: inline-block;
-  label {
-    text-align: left;
-    line-height: 24px;
-    position: absolute;
-    z-index: 2;
-    left: 0px;
-    top: 14px;
-    pointer-events: none;
-    transition: transform 100ms ease;
-    transform: translateY(-25px);
-  }
-  input {
-    width: 100%;
-    line-height: 24px;
-    outline: none;
-    border: unset;
-    border-bottom: 1.5px solid var(--unnamed-color-94a3be);
-    border-bottom: 1.5px solid #94a3be;
-    padding: 5px 0px;
-    position: relative;
-  }
 }
 
 .input-wrapper {
@@ -109,7 +74,6 @@
   display: inline-block;
   label {
     text-align: left;
-    line-height: 24px;
     position: absolute;
     z-index: 2;
     left: 0px;
@@ -117,23 +81,42 @@
     pointer-events: none;
     transition: transform 100ms ease;
     transform: translateY(-25px);
+    
+    @extend .text-style-11-14-black;
   }
   input {
     width: 100%;
     line-height: 24px;
     outline: none;
     border: unset;
-    border-bottom: 1.5px solid var(--unnamed-color-94a3be);
     border-bottom: 1.5px solid #94a3be;
     padding: 5px 0px;
     position: relative;
+    @extend .text-style-16-22-black-bold;
   }
-
+  
   input.empty + label {
+    @extend .text-style-16-22-black;
     transform: translateY(0);
+    
   }
 
   input:focus + label {
+    @extend .text-style-11-14-black;
     transform: translateY(-25px);
+  }
+
+}
+
+.trackobot-btn {
+  background: #2a443d 0% 0% no-repeat padding-box;
+  border: 1px solid #00000000;
+  border-radius: 28px;
+  opacity: 1;
+
+  .trackobot-btn-text {
+    letter-spacing: 0.8px;
+    color: #ffffff;
+    opacity: 1;
   }
 }

@@ -1,25 +1,60 @@
 <div class="outside-container">
     <div class="inside-container">
-        <form novalidate>
-            <div class="left-inside-container">
-                <div class="input-holder">
-                  <input
-                    class="srate-input"
+        <form 
+        novalidate
+        [formGroup]="loginForm"
+        (ngSubmit)="onLoginSubmit()">
+        <div class="logo">
+          <img src="../../../../assets/images/TrackoBot-Logo.png" width="150px" />
+          <div class="logo-text">Track-O-Bot</div>
+        </div>
+          <div class="left-inside-container">
+            <div class="login-text">Login</div>
+            <div class="input-wrapper">
+              <input
+                    class="trackobot-input"
+                    (focus)="invalidCredentials = false"
+                    [ngClass]="{
+                      empty: !(
+                        loginForm.get('email') && loginForm.get('email')!.value != ''
+                      ),
+                      'is-invalid':
+                        (loginForm.get('email')!.touched ||
+                          loginForm.get('email')!.dirty) &&
+                        !loginForm.get('email')!.valid
+                    }"
                     id="login-email-input"
+                    formControlName="email"
                     type="email"
                   />
                   <label for="login-email-input">Email</label>
-                </div>
+            </div>
           
-                <div class="input-holder">
+            <div class="input-wrapper">
                   <input
-                    class="srate-input"
+                    class="trackobot-input"
+                    (focus)="invalidCredentials = false"
+                    [ngClass]="{
+                      empty: !(
+                        loginForm.get('password') && loginForm.get('password')!.value != ''
+                      ),
+                      'is-invalid':
+                        (loginForm.get('password')!.touched ||
+                          loginForm.get('password')!.dirty) &&
+                        !loginForm.get('password')!.valid
+                    }"
                     id="login-password-input"
+                    formControlName="password"
                     type="password"
                   />
                   <label for="login-password-input">Password</label>
-                </div>
             </div>
+          
+            <button type="button" class="login-forgot-password" (click)="onForgotPassword()">Forgot Password?</button>
+          </div>
         </form>
+        <button class="trackobot-btn" type="submit" [disabled]="!loginForm.valid">
+          <div class="trackobot-btn-text">Sign In</div>
+        </button>
     </div>
 </div>
