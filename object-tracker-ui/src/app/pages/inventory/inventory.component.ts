@@ -1,6 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 @Component({
   templateUrl: './Inventory.component.html',
@@ -10,24 +13,34 @@ import { Router } from '@angular/router';
  * This component is the starting page for the activation part of the application
  */
 export class InventoryComponent implements OnInit {
-  inventory:string[] = ["object1", "object2"];
+  inventory:any= ["object1", "object2"];
   inventoryForm!:FormGroup;
 
   constructor(
     private fb: FormBuilder,
     public router: Router,
+    private http: HttpClient
   ) {
     
   }
 
   ngOnInit() {
-    this.inventoryForm = this.fb.group({
-      object1:['',
-      [],
-      ],
-      object2:['',
-      [],
-    ],
+    this.getObjects();
+    console.log(this.inventory);
+    // this.inventoryForm = this.fb.group({
+    //   object1:['',
+    //   [],
+    //   ],
+    //   object2:['',
+    //   [],
+    // ],
+    // });
+  }
+
+  getObjects(){
+    this.http.get('http://127.0.0.1:8000/api/products/').subscribe(response => {
+      this.inventory = response;
+      console.log(response)
     });
   }
 
