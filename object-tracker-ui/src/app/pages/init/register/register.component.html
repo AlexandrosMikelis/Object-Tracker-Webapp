@@ -1,0 +1,78 @@
+<div class="outside-container">
+  <div class="inside-container">
+      <form
+      novalidate
+      [formGroup]="registerForm"
+      (ngSubmit)="onRegisterSubmit()">
+      <div class="logo">
+        <img src="../../../../assets/images/TrackoBot-Logo.png" width="150px" />
+        <div class="logo-text">Track-O-Bot</div>
+      </div>
+        <div class="left-inside-container">
+          <div class="login-text">Sing up</div>
+          <div class="input-wrapper">
+            <input
+                  class="trackobot-input"
+                  (focus)="invalidCredentials = false"
+                  [ngClass]="{
+                    empty: !(
+                      registerForm.get('email') && registerForm.get('email')!.value != ''
+                    ),
+                    'is-invalid':
+                      (registerForm.get('email')!.touched ||
+                        registerForm.get('email')!.dirty) &&
+                      !registerForm.get('email')!.valid
+                  }"
+                  id="login-email-input"
+                  formControlName="email"
+                  type="email"
+                />
+                <label for="login-email-input">Email</label>
+          </div>
+
+          <div class="input-wrapper">
+                <input
+                  class="trackobot-input"
+                  (focus)="invalidCredentials = false"
+                  [ngClass]="{
+                    empty: !(
+                      registerForm.get('password') && registerForm.get('password')!.value != ''
+                    ),
+                    'is-invalid':
+                      (registerForm.get('password')!.touched ||
+                        registerForm.get('password')!.dirty) &&
+                      !registerForm.get('password')!.valid
+                  }"
+                  id="login-password-input"
+                  formControlName="password"
+                  type="password"
+                />
+                <label for="login-password-input">Password</label>
+          </div>
+
+          <div class="input-wrapper">
+            <input
+              class="trackobot-input"
+              (focus)="invalidCredentials = false"
+              [ngClass]="{
+                empty: !(
+                  registerForm.get('password') && registerForm.get('password')!.value != ''
+                ),
+                'is-invalid':
+                  (registerForm.get('password')!.touched ||
+                    registerForm.get('password')!.dirty) &&
+                  !registerForm.get('password')!.valid
+              }"
+              id="login-password-input"
+              formControlName="password"
+              type="password"
+            />
+            <label for="login-password-input">Retype Password</label>
+          </div>
+        </div>
+      </form>
+      <button class="trackobot-btn" type="submit" [disabled]="!registerForm.valid">
+        <div class="trackobot-btn-text">Sign Up</div>
+      </button>
+  </div>
+</div>

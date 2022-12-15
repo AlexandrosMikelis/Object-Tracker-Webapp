@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RegisterComponent } from './register.component';
+import { WorkspaceComponent } from './workspace.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: RegisterComponent,
+    component: WorkspaceComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
 })
-export class RegisterPageRoutingModule {}
+export class WorkspacePageRoutingModule {}

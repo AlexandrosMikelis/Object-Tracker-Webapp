@@ -6,13 +6,13 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 @Component({
-  templateUrl: './inventory.component.html',
-  styleUrls: ['./inventory.component.scss'],
+  templateUrl: './workspace.component.html',
+  styleUrls: ['./workspace.component.scss'],
 })
 /**
  * This component is the starting page for the activation part of the application
  */
-export class InventoryComponent implements OnInit {
+export class WorkspaceComponent implements OnInit {
   inventory:any= ["object1", "object2"];
   inventoryForm!:FormGroup;
 
@@ -38,6 +38,10 @@ export class InventoryComponent implements OnInit {
   }
 
   getObjects(){
+    // this.http.get('http://127.0.0.1:8000/api/products/').subscribe(response => {
+    //   this.inventory = response;
+    //   console.log(response)
+    // });
   }
 
   // createDynamicForm(surveyTemplate: any) {

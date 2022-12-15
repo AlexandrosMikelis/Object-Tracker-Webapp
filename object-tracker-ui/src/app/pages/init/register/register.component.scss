@@ -1,0 +1,35 @@
+@import "../../../../scss/ObjectTracker/utilities";
+
+
+.left-inside-container{
+  margin-top: 50px;
+}
+.login-text{
+  font: normal normal bold 20px/26px Century Gothic;
+  letter-spacing: 0px;
+  color: black;
+  opacity: 1;
+  text-align: center;
+}
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.logo-text{
+  font: normal normal bold 30px/40px Century Gothic;
+  display: flex;
+  align-items: center;
+  color: #2a443d;
+}
+.input-wrapper {
+  margin-top: 40px;
+}
+
+
+.trackobot-btn {
+  margin-top: 60px;
+  width: 70%;
+  height: 35px;
+}
