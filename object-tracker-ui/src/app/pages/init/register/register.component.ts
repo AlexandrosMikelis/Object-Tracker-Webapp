@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
   passwordShowing: boolean = false;
+  rePasswordShowing: boolean = false;
   invalidCredentials: boolean = false;
 
   constructor(
@@ -26,15 +27,28 @@ export class RegisterComponent implements OnInit {
       email: ['',
         [Validators.required],
       ],
+      username: ['',[Validators.required]],
       // password: ['User1234!', [Validators.required]],
       password: ['',[Validators.required]],
+      repassword:['',[Validators.required]]
     });
   }
 
-  onForgotPassword(){}
+  handlePasswordVisibility() {
+    let password = document.getElementById('register-password-input');
+    password?.setAttribute('type', this.passwordShowing ? 'password' : 'text');
+    this.passwordShowing = !this.passwordShowing;
+  }
+  handleRePasswordVisibility() {
+    let repassword = document.getElementById('register-repassword-input');
+    repassword?.setAttribute('type', this.rePasswordShowing ? 'password' : 'text');
+    this.rePasswordShowing = !this.rePasswordShowing;
+  }
 
-  handlePasswordVisibility(){}
-
-  onRegisterSubmit(){}
+  onRegisterSubmit(){
+    let user = this.registerForm.value;
+    console.log(user);
+    this.router.navigate(['./home'])
+  }
 
 }

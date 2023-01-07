@@ -33,7 +33,12 @@ export class LoginComponent implements OnInit {
 
   onForgotPassword(){}
 
-  handlePasswordVisibility(){}
+  handlePasswordVisibility() {
+    let password = document.getElementById('login-password-input');
+    password?.setAttribute('type', this.passwordShowing ? 'password' : 'text');
+    this.passwordShowing = !this.passwordShowing;
+  }
+
 
   onLoginSubmit(){
     const user = this.loginForm.value;

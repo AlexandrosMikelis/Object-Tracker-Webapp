@@ -27,7 +27,7 @@
                     formControlName="email"
                     type="email"
                   />
-                  <label for="login-email-input">Email</label>
+                  <label for="login-email-input" class="input-label">Email</label>
             </div>
 
             <div class="input-wrapper">
@@ -47,7 +47,21 @@
                     formControlName="password"
                     type="password"
                   />
-                  <label for="login-password-input">Password</label>
+                  <label for="login-password-input" class="input-label">Password</label>
+                  <div class="test">
+                    <button
+                      type="button"
+                      class="eye-icon"
+                      [ngClass]="!this.passwordShowing ? 'visible' : 'invisible'"
+                      (click)="handlePasswordVisibility()"
+                      [disabled]="
+                        !(
+                          loginForm.get('password') &&
+                          loginForm.get('password')?.value != ''
+                        )
+                      "
+                    ><img [attr.src]="!this.passwordShowing ? '../../../../assets/images/eye-hide.png': '../../../../assets/images/eye-show.png'" height="25px" width="25px"></button>
+                  </div>
             </div>
 
             <button type="button" class="login-forgot-password" (click)="onForgotPassword()">Forgot Password?</button>

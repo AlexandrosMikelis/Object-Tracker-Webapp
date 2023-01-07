@@ -22,6 +22,33 @@ export class WorkspaceComponent implements OnInit {
   curr_x!:number;
   curr_y!:number;
 
+  user_workspaces = [
+    {
+      "workspace_id":"123456789",
+      "workspace_name":"Alex Cabinet",
+      "workspace_type":"cabinet",
+      "x_range":138,
+      "y_range":300,
+      "input_side":"Left"
+    },
+    {
+      "workspace_id":"123456789",
+      "workspace_name":"Alex Cabinet",
+      "workspace_type":"cabinet",
+      "x_range":138,
+      "y_range":300,
+      "input_side":"Left"
+    },
+    {
+      "workspace_id":"123456789",
+      "workspace_name":"Alex Cabinet",
+      "workspace_type":"cabinet",
+      "x_range":138,
+      "y_range":300,
+      "input_side":"Left"
+    }
+  ]
+
   @ViewChild('canvas', { static: true })
   canvas!: ElementRef<HTMLCanvasElement> ;
 
@@ -53,7 +80,15 @@ export class WorkspaceComponent implements OnInit {
     // });
   }
   onSubmit(){
-    this.router.navigate(['./inventory'])
+    this.user_workspaces.push({
+      "workspace_id":"123456789",
+      "workspace_name":this.workspaceConfiguration.value.workspaceName,
+      "workspace_type":"cabinet",
+      "x_range":this.workspaceConfiguration.value.x_range,
+      "y_range":this.workspaceConfiguration.value.y_range,
+      "input_side":this.workspaceConfiguration.value.input_side
+    });
+    console.log(this.user_workspaces);
   }
   addWorkspace(){
     this.isConfigSpace = true;

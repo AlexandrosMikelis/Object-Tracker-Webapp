@@ -58,7 +58,27 @@
   align-self: flex-start;
   align-items: left;
 }
+// I think chris said something like this
+.eye-icon {
+  width: 20px;
+  height: 17px;
+  position: absolute;
+  bottom: 10%;
+  right: 0;
 
+  .visible {
+    background: transparent
+      url("../../assets/images/eye-show.png") 0% 0% no-repeat
+      padding-box;
+    opacity: 1;
+  }
+
+  .invisible {
+    background: transparent url("../../assets/images/eye-hide.png")
+      0% 0% no-repeat padding-box;
+    opacity: 1;
+  }
+}
 .tackobot-input {
   border-top: none;
   border-left: none;
@@ -77,11 +97,11 @@
     position: absolute;
     z-index: 2;
     left: 0px;
-    top: 14px;
+    top: 10px;
     pointer-events: none;
     transition: transform 100ms ease;
     transform: translateY(-25px);
-    
+
     @extend .text-style-11-14-black;
   }
   input {
@@ -94,11 +114,11 @@
     position: relative;
     @extend .text-style-16-22-black-bold;
   }
-  
+
   input.empty + label {
     @extend .text-style-16-22-black;
     transform: translateY(0);
-    
+
   }
 
   input:focus + label {

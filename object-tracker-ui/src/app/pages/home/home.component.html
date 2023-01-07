@@ -7,14 +7,42 @@
 
     <div class="left-inside-container">
       <div class="welcome-text">
-        Hello User
-        <br><br>
-        Track-O-Bot is an Object Tracking robot that helps you organize and identify your objects inside your space.
+        Welcome <b>User</b>
+        <br>
+        <div class="introduction">
+          <br>
+          <b style="padding-left: 15px;">Introduction</b><br><br>
+          <div class="intro-img"><img src="../../../assets/images/light-bulb.png" alt="" height="40px" width="40px"></div>
+          <div class="intro-text">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            Track-O-Bot is an Object Tracking robot that helps you organize
+            and identify your objects inside your space.
+            <br><br>
+          </div>
+        </div>
+        <div class="button-whatever">
+          <button class="trackobot-btn" type="submit" (click)="Start()">
+            <div class="trackobot-btn-text">Let's Start</div>
+          </button>
+        </div>
+
+        <div class="workspace">
+          <br>
+          <b style="padding: 15px">Workspace</b><br><br>
+          <div class="workspace-img"><img src="../../../assets/images/table.png" alt="" height="40px" width="40px"></div>
+          <div class="workspace-text">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            After you <b>install the device</b> in your area you can initialize a workspace in order to start object identification
+            <br><br>
+          </div>
+        </div>
+        <div class="button-whatever">
+          <button class="trackobot-btn" type="submit" (click)="Guide()">
+            <div class="trackobot-btn-text">Intall your device</div>
+          </button>
+        </div>
       </div>
 
     </div>
-    <button class="trackobot-btn" type="submit" (click)="Start()">
-      <div class="trackobot-btn-text">Let's Start</div>
-    </button>
   </div>
 </div>

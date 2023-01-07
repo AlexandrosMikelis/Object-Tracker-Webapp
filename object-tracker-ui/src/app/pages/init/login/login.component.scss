@@ -10,6 +10,25 @@
     opacity: 1;
     text-align: center;
 }
+
+.visible {
+  background-image: url("../../../../assets/images/eye-show.png") 0% 0% no-repeat;
+  }
+.test{
+  background-image: url('../../../../assets/images/eye-show.png');
+}
+
+.eye-icon{
+  position: absolute;
+  bottom: 30%;
+  right: 3%;
+}
+
+.invisible {
+    background: url("../../../../assets/images/eye-hide.png")
+      0% 0% no-repeat padding-box;
+    opacity: 1;
+  }
 .input-wrapper {
     margin-top: 40px;
 }

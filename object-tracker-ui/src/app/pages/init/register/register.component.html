@@ -9,7 +9,7 @@
         <div class="logo-text">Track-O-Bot</div>
       </div>
         <div class="left-inside-container">
-          <div class="login-text">Sing up</div>
+          <div class="login-text">Register</div>
           <div class="input-wrapper">
             <input
                   class="trackobot-input"
@@ -27,9 +27,27 @@
                   formControlName="email"
                   type="email"
                 />
-                <label for="login-email-input">Email</label>
+                <label for="login-email-input">Email*</label>
           </div>
-
+          <div class="input-wrapper">
+            <input
+                  class="trackobot-input"
+                  (focus)="invalidCredentials = false"
+                  [ngClass]="{
+                    empty: !(
+                      registerForm.get('username') && registerForm.get('username')!.value != ''
+                    ),
+                    'is-invalid':
+                      (registerForm.get('username')!.touched ||
+                        registerForm.get('username')!.dirty) &&
+                      !registerForm.get('username')!.valid
+                  }"
+                  id="register-username-input"
+                  formControlName="username"
+                  type="text"
+                />
+                <label for="register-username-input">Username*</label>
+          </div>
           <div class="input-wrapper">
                 <input
                   class="trackobot-input"
@@ -43,11 +61,25 @@
                         registerForm.get('password')!.dirty) &&
                       !registerForm.get('password')!.valid
                   }"
-                  id="login-password-input"
+                  id="register-password-input"
                   formControlName="password"
                   type="password"
                 />
-                <label for="login-password-input">Password</label>
+                <label for="register-password-input">Password*</label>
+                <div class="test">
+                  <button
+                    type="button"
+                    class="eye-icon"
+                    [ngClass]="!this.passwordShowing ? 'visible' : 'invisible'"
+                    (click)="handlePasswordVisibility()"
+                    [disabled]="
+                      !(
+                        registerForm.get('password') &&
+                        registerForm.get('password')?.value != ''
+                      )
+                    "
+                  ><img [attr.src]="!this.passwordShowing ? '../../../../assets/images/eye-hide.png': '../../../../assets/images/eye-show.png'" height="25px" width="25px"></button>
+                </div>
           </div>
 
           <div class="input-wrapper">
@@ -56,22 +88,36 @@
               (focus)="invalidCredentials = false"
               [ngClass]="{
                 empty: !(
-                  registerForm.get('password') && registerForm.get('password')!.value != ''
+                  registerForm.get('repassword') && registerForm.get('repassword')!.value != ''
                 ),
                 'is-invalid':
-                  (registerForm.get('password')!.touched ||
-                    registerForm.get('password')!.dirty) &&
-                  !registerForm.get('password')!.valid
+                  (registerForm.get('repassword')!.touched ||
+                    registerForm.get('repassword')!.dirty) &&
+                  !registerForm.get('repassword')!.valid
               }"
-              id="login-password-input"
-              formControlName="password"
+              id="register-repassword-input"
+              formControlName="repassword"
               type="password"
             />
-            <label for="login-password-input">Retype Password</label>
+            <label for="register-repassword-input">Retype Password*</label>
+            <div class="test">
+              <button
+                type="button"
+                class="eye-icon"
+                [ngClass]="!this.rePasswordShowing ? 'visible' : 'invisible'"
+                (click)="handleRePasswordVisibility()"
+                [disabled]="
+                  !(
+                    registerForm.get('repassword') &&
+                    registerForm.get('repassword')?.value != ''
+                  )
+                "
+              ><img [attr.src]="!this.rePasswordShowing ? '../../../../assets/images/eye-hide.png': '../../../../assets/images/eye-show.png'" height="25px" width="25px"></button>
+            </div>
           </div>
         </div>
       </form>
-      <button class="trackobot-btn" type="submit" [disabled]="!registerForm.valid">
+      <button class="trackobot-btn" type="submit" (click)="onRegisterSubmit()" [disabled]="!registerForm.valid">
         <div class="trackobot-btn-text">Sign Up</div>
       </button>
   </div>
