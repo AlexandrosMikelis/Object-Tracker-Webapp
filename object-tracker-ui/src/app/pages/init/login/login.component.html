@@ -1,6 +1,6 @@
 <div class="outside-container">
     <div class="inside-container">
-        <form 
+        <form
         novalidate
         [formGroup]="loginForm"
         (ngSubmit)="onLoginSubmit()">
@@ -29,7 +29,7 @@
                   />
                   <label for="login-email-input">Email</label>
             </div>
-          
+
             <div class="input-wrapper">
                   <input
                     class="trackobot-input"
@@ -49,12 +49,13 @@
                   />
                   <label for="login-password-input">Password</label>
             </div>
-          
+
             <button type="button" class="login-forgot-password" (click)="onForgotPassword()">Forgot Password?</button>
           </div>
         </form>
-        <button class="trackobot-btn" type="submit" [disabled]="!loginForm.valid">
+        <button class="trackobot-btn" type="submit" [disabled]="!loginForm.valid" (click)="onLoginSubmit()">
           <div class="trackobot-btn-text">Sign In</div>
         </button>
+        <button type="button" class="login-forgot-password" (click)="onNoAccount()">No account? Register here</button>
     </div>
 </div>

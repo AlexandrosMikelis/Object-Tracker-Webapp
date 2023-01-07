@@ -6,6 +6,26 @@
   align-items: center;
   margin-top: 20px;
 }
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.logo-text{
+  font: normal normal bold 20px/26px Century Gothic;
+  display: flex;
+  align-items: center;
+  color: #2a443d;
+}
+
+.inventory-text {
+  margin-top: 10px;
+  font: normal normal bold 30px/40px Century Gothic;
+  display: flex;
+  align-items: center;
+  color: #2a443d;
+}
 
 .innex-box-content{
   width: 100px;

@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     public router: Router,
   ) {
-    
+
   }
 
   ngOnInit() {
@@ -35,6 +35,19 @@ export class LoginComponent implements OnInit {
 
   handlePasswordVisibility(){}
 
-  onLoginSubmit(){}
+  onLoginSubmit(){
+    const user = this.loginForm.value;
+
+    if(user.email == "admin@gmail.com" && user.password == "admin1234"){
+      this.router.navigate(['/workspace'])
+    }
+    else{
+      console.log("error")
+    }
+  }
+
+  onNoAccount(){
+    this.router.navigate(['/register'])
+  }
 
 }

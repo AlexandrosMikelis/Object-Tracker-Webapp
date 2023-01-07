@@ -8,6 +8,6 @@ import { SharedModule } from '../../shared.module';
   imports: [WorkspacePageRoutingModule, SharedModule],
   providers: [],
 })
-export class InventoryModule {
+export class WorkspaceModule {
   constructor() {}
 }

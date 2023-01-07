@@ -1,0 +1,70 @@
+<div class="outside-container">
+  <div class="inside-container">
+    <div class="logo">
+      <img src="../../../../assets/images/TrackoBot-Logo.png" width="150px" />
+      <!-- <div class="logo-text">Track-O-Bot</div> -->
+    </div>
+    <div class="inventory-text">Workspace</div>
+    <div class="workspace-showcase">
+      <button class="add-button">
+        <div class="innex-box-content">
+          <img src="../../../assets/images/cabinet.png" alt="" width="50px" height="50px">
+        </div>
+        <div class="workspace-title">
+          Cabinet
+        </div>
+      </button>
+      <button class="add-button" (click)="addWorkspace()">
+        <div class="innex-box-content">
+          <img src="../../../assets/images/plus-icon.png" alt="" width="50px" height="50px">
+        </div>
+        <div class="workspace-title">
+          Add a Workspace
+        </div>
+      </button>
+    </div>
+
+
+
+    <div *ngIf="isConfigSpace" class="workspace-config-form">
+      <div class="workspace-form-title">Workspace Configuration</div>
+      <form novalidate [formGroup]="workspaceConfiguration" class="inner-form">
+        <div class="form-input">
+          <label for="workspace_name" class="workspace-form-label">Name</label>
+          <input type="text" id="workspace_name" formControlName="workspaceName" class="trackobot-input">
+        </div>
+
+        <div class="workspace-canvas">
+          <canvas id="canvas" style="background-image: url('../../../assets/images/image00005.jpeg');background-size: 100% 100%;" #canvas width="600" height="300"></canvas>
+          <div style="margin-top:20px">
+            <input  formControlName="x_range" type="range" name="x-range" id="x-point" min="0" max="600" value="0">
+          <label for="x-point">x</label>
+          <br>
+          <input formControlName="y_range" type="range" name="y-range" id="y-point" min="0" max="300" value="0">
+          <label for="y-point">y</label>
+          </div>
+
+        </div>
+
+        <div class="workspace-input-output-configs">
+          <div>Which side depending on the drawn line is the <b>Input Side</b></div>
+          <input formControlName="input_side" type="radio" name="input-side" id="left" value="left">
+          <label for="left">Left</label><br>
+          <input formControlName="input_side" type="radio" name="input-side" id="right" value="right">
+          <label for="right">Right</label><br>
+          <input formControlName="input_side" type="radio" name="input-side" id="up" value="up">
+          <label for="up">Up</label><br>
+          <input formControlName="input_side" type="radio" name="input-side" id="down" value="down">
+          <label for="down">Down</label><br>
+        </div>
+
+        <button class="trackobot-btn" type="submit" [disabled]="!workspaceConfiguration.valid" (click)="onSubmit()">
+          <div class="trackobot-btn-text">Submit Workspace</div>
+        </button>
+
+      </form>
+      {{workspaceConfiguration.value | json}}
+    </div>
+  </div>
+</div>
+
